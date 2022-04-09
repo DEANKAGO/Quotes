@@ -10,6 +10,9 @@ export class MainComponent implements OnInit {
   @Input() btn1= "New Quote";
   @Input() btn2="Card";
 
+  card="card";
+  cardBool=true;
+
   constructor() { }
 
   ngOnInit(): void {
