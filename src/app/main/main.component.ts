@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, EventEmitter } from '@angular/core';
+import { Component, OnInit,EventEmitter } from '@angular/core';
 
 
 @Component({
@@ -7,17 +7,10 @@ import { Component, OnInit, Input, EventEmitter } from '@angular/core';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
+  
 
-  btn1= "New Quote";
-  btn2="Card";
-  btnPress = new EventEmitter()
+ 
 
-  card="card";
-  cardBool=true;
-
-  btnPressEvent = (str: string) =>{
-    this.btnPress.emit(str)
-  }
 
   constructor() { }
 
