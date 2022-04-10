@@ -10,6 +10,9 @@ export class NewQuoteComponent implements OnInit {
   @Input() btn2="Card";
   @Output() btnPress = new EventEmitter()
 
+  showAddItem = false;
+  
+
 
   constructor() { }
 
