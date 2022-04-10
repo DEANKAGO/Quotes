@@ -1,23 +1,23 @@
 <div class="container-fluid mt-5">
   <div class="container  bg-light shadow p-3" style="width: 50%;">
-    <form action="">
+    <form action="" #form="ngForm">
       <div class="mb-3 " >
         <label for="formGroupExampleInput" class="form-label" >NAME</label>
-        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Input Your Name" ([ngModel])="InName">
+        <input type="text" class="form-control" id="name" name="name" placeholder="Input Your Name" [(ngModel)]="newQuote.name" #name="ngModel">
       </div>
       <div class="mb-3 " >
         <label for="formGroupExampleInput" class="form-label" >AUTHOR NAME</label>
-        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Input Author Name" ([ngModel])='InAuthorName'>
+        <input type="text" class="form-control" id="author-name" name="author-name" placeholder="Input Author Name" [(ngModel)]="newQuote.authorName" #authorName="ngModel">
       </div>
       <div class="mb-3">
         <label for="formGroupExampleInput2" class="form-label">QUOTE</label>
-        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Input Quote" ([ngModel])='InQuote'>
+        <input type="text" class="form-control" id="quote" name="quote" placeholder="Input Quote" [(ngModel)]="newQuote.quote" #quote="ngModel">
       </div>
     </form>
   </div>
   <div class="d-flex justify-content-center">
-    <div class="text-center p-3"><button type="button" class="btn btn-primary">{{btn2}}</button></div>
-    <div class="text-center p-3"><button type="button" class="btn btn-dark">Clear</button></div>
+    <div class="text-center p-3"><button type="button" class="btn btn-primary" click="SubmitBtn()">Submit</button></div>
+    <div class="text-center p-3"><button type="button" class="btn btn-dark" click="ClearBtn()">Clear</button></div>
 
   </div>
 </div>

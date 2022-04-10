@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Quote } from '../quote';
 
 @Component({
   selector: 'app-new-quote',
@@ -7,14 +8,29 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class NewQuoteComponent implements OnInit {
 
-  @Input() btn2="Card";
-  @Output() btnPress = new EventEmitter()
+  // @Input() btn2="Card";
+  // @Output() btnPress = new EventEmitter()
+  // @Output() newQuote = new EventEmitter()
+  newQuote = new Quote("", "", "");
+  
 
-  InQuote = '';
-  InAuthorName = '';
-  InName = '';
+  inQuote = "";
+  inAuthorName = "";
+  inName = "";
+
 
   showAddItem = false;
+
+  ClearBtn = () => {
+    this.inQuote = "";
+    this.inAuthorName = "";
+    this.inName = "";
+  
+  }
+  // SubmitBtn = () => {
+  //   console.log(showNewQuote)
+  //   // this.newQuote.emit({name:this.inName, authorName:this.inAuthorName, quote:this.inQuote})
+  // }
   
 
 
