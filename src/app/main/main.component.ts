@@ -12,10 +12,15 @@ export class MainComponent implements OnInit {
 
   card = "card";
   cardBool = true;
+  showAddItem = false;
 
   btnPressEvent = (str: string) =>{
     this.btnPress.emit(str)
-    console.log(str)
+    console.log(str);
+    if (str === 'btn'){
+      this.showAddItem
+      return;
+    }
     
   }
 
