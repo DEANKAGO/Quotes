@@ -7,6 +7,7 @@ import { Quote } from '../quote';
   styleUrls: ['./new-quote.component.css']
 })
 export class NewQuoteComponent implements OnInit {
+  [x: string]: any;
 
   // @Input() btn2="Card";
   // @Output() btnPress = new EventEmitter()
@@ -19,19 +20,27 @@ export class NewQuoteComponent implements OnInit {
   inName = "";
 
 
+
+
   showAddItem = false;
 
-  ClearBtn = () => {
-    this.inQuote = "";
-    this.inAuthorName = "";
-    this.inName = "";
+  SubmitBtn = () => {
+    let quoteForm = document.getElementById("onSubmit")
+    // quoteForm.reset();
+      if (this['myform'].valid) {
+        console.log("Form Submitted!");
+        this['myform'].reset();
+      }
   
+
   }
   // SubmitBtn = () => {
   //   console.log(showNewQuote)
   //   // this.newQuote.emit({name:this.inName, authorName:this.inAuthorName, quote:this.inQuote})
   // }
   
+  // <form name="myForm" #myForm="ngForm"></form>this.myForm.resetForm();
+
 
 
   constructor() { }
