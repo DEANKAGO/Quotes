@@ -8,6 +8,7 @@ import { Quote } from '../quote';
 })
 export class NewQuoteComponent implements OnInit {
   [x: string]: any;
+  Btn2 = 'addQuote'
 
   @Output() add = new EventEmitter<Quote>();
 
