@@ -8,38 +8,48 @@ import { Quote } from '../quote';
 })
 export class NewQuoteComponent implements OnInit {
   [x: string]: any;
-  
+
   @Output() add = new EventEmitter<Quote>();
 
 
   // @Input() btn2="Card";
   // @Output() btnPress = new EventEmitter()
   // @Output() newQuote = new EventEmitter()
-  newQuote = new Quote("", "", "");
+  newQuote = new Quote("", "", "");  
+  
   
 
   inQuote = "";
   inAuthorName = "";
   inName = "";
 
-
-
-
   showAddItem = false;
+
+
   addQuote() {
+    console.log(this.add.emit(this['quoted']))
     this.add.emit(this['quoted']);
     this['quoted'] = new Quote("", "", "")
+
   }
+
+  // SubmitBtn(str: string) {
+  //   if(str==='SubmitBtn') {
+  //     this.addQuote;
+  //     return
+  //   }
+
+  // }
+  
     
   
-
   SubmitBtn = () => {
-    let quoteForm = document.getElementById("onSubmit")
-    // quoteForm.reset();
+    let quoteForm = document.getElementById("onClick")
       if (this['myform'].valid) {
         console.log("Form Submitted!");
         this['myform'].reset();
       }
+
      
 
   

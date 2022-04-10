@@ -7,13 +7,15 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { MainComponent } from './main/main.component';
 import { NewQuoteComponent } from './new-quote/new-quote.component';
 import { FormsModule } from '@angular/forms';
+import { QuoteComponent } from './quote/quote.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     MainComponent,
-    NewQuoteComponent
+    NewQuoteComponent,
+    QuoteComponent
   ],
   imports: [
     BrowserModule,
