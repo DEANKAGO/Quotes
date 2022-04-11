@@ -9,7 +9,7 @@ import { Quote } from '../quote';
 })
 export class QuoteComponent implements OnInit {
 
-  quotes: Quote[]= [
+  public quotes: Quote[]= [
     new Quote(1, "it is never night in finland", "", "", 0, 0),
     new Quote(2, "", "", "", 0, 0),
     new Quote(3, "", "", "", 0, 0),
