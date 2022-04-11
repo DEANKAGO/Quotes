@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Quote } from '../quote';
 
 @Component({
@@ -14,9 +15,6 @@ export class NewQuoteComponent implements OnInit {
   @Output() BtnPress = new EventEmitter();
 
 
-  // @Input() btn2="Card";
-  // @Output() btnPress = new EventEmitter()
-  // @Output() newQuote = new EventEmitter()
   newQuote = new Quote(0, "", "", "", 0, 0);  
   
   
@@ -30,48 +28,24 @@ export class NewQuoteComponent implements OnInit {
   showAddItem = false;
 
 
-  addQuote() {
-    this.add.emit(this['quoted']);
+  addQuote(myForm: NgForm) {
+    this.newQuote.id=0
+    this.newQuote.quote= myForm.value.quote
+    this.newQuote.name= myForm.value.name
+    this.newQuote.authorName= myForm.value.authorName
+    this.add.emit(this.newQuote);
+    myForm.resetForm()
     // this['quoted'] = new Quote(0,"", "", "", 0, 0)
 
   }
 
-  // SubmitBtn(str: string) {
-  //   if(str==='SubmitBtn') {
-  //     this.addQuote;
-  //     return
-  //   }
-
-  // }
+  
 
   BtnPressEvent = (str: string) =>{
     this['BtnPress'].emit(str);
   }
   
     
-  
-  SubmitBtn = () => {
-    // let quoteForm = document.getElementById("onClick")
-      if (this['myform'].valid) {
-        this.BtnPressEvent = (str: string) =>{
-          this['BtnPress'].emit(str);
-        }
-        // console.log(this['myform'])
-        this['myform'].reset();
-      }
-
-     
-
-  
-
-  }
-  // SubmitBtn = () => {
-  //   console.log(showNewQuote)
-  //   // this.newQuote.emit({name:this.inName, authorName:this.inAuthorName, quote:this.inQuote})
-  // }
-  
-  // <form name="myForm" #myForm="ngForm"></form>this.myForm.resetForm();
-
 
 
   constructor() { }
@@ -80,9 +54,3 @@ export class NewQuoteComponent implements OnInit {
   }
 
 }
-
-// @Output() add = new EventEmitter<Quote>();
-// addQuote() {
-//   this.add.emit(this.quoted);
-//   this.quoted = new Quote(0, "", "", "", "", ), 0, 0);
-// }

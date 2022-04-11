@@ -10,13 +10,20 @@ import { Quote } from '../quote';
 export class QuoteComponent implements OnInit {
 
   public quotes: Quote[]= [
+    new Quote(1, "it is never night in finland", "", "", 1, 0),
     new Quote(1, "it is never night in finland", "", "", 0, 0),
-    new Quote(2, "", "", "", 0, 0),
-    new Quote(3, "", "", "", 0, 0),
-    new Quote(4, "", "", "", 0, 0),
-
+    new Quote(1, "it is never night in finland", "", "", 0, 0),
 
   ]
+
+  addQuote(quote: Quote){
+    quote.upvotes=0;
+    quote.downvotes=0;
+    quote.id=this.quotes.length+1
+    this.quotes.push(quote)
+    
+
+  }
 
   arr: number[] = this.quotes.map(quote=>quote.upvotes)
   highest = Math.max(...this.arr)
@@ -26,8 +33,5 @@ export class QuoteComponent implements OnInit {
   ngOnInit(): void {
   }
 
-}
-function newQuote(): Quote {
-  throw new Error('Function not implemented.');
 }
 
