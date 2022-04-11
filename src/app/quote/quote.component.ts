@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { NewQuoteComponent } from '../new-quote/new-quote.component';
 import { Quote } from '../quote';
 
@@ -8,6 +8,7 @@ import { Quote } from '../quote';
   styleUrls: ['./quote.component.css']
 })
 export class QuoteComponent implements OnInit {
+  @Output() isDel = new EventEmitter<boolean>()
 
   public quotes: Quote[]= [
     new Quote(1, "it is never night in finland", "Martin", "Kago", 1, 0),
@@ -27,6 +28,18 @@ export class QuoteComponent implements OnInit {
 
   arr: number[] = this.quotes.map(quote=>quote.upvotes)
   highest = Math.max(...this.arr)
+
+  deleteQuote(del: boolean, index: number){
+    if(del){
+      this.quotes.splice(index, 1)
+    }
+  }
+
+  addUpvote(up: boolean, index: number){
+    if(up){
+      this.quotes[index].upvotes=this.quotes[index].upvotes+1
+    }
+  }
 
   constructor() { }
 

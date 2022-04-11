@@ -35,7 +35,6 @@ export class NewQuoteComponent implements OnInit {
     this.newQuote.authorName= myForm.value.authorName
     this.add.emit(this.newQuote);
     console.log(this.newQuote)
-    setTimeout(myForm.reset, 0.5)
     // myForm.reset()
   }
 
@@ -54,3 +53,4 @@ export class NewQuoteComponent implements OnInit {
   }
 
 }
+
