@@ -29,13 +29,13 @@ export class NewQuoteComponent implements OnInit {
 
 
   addQuote(myForm: NgForm) {
-    this.newQuote.id=0
-    this.newQuote.quote= myForm.value.quote
-    this.newQuote.name= myForm.value.name
-    this.newQuote.authorName= myForm.value.authorName
-    this.add.emit(this.newQuote);
-    console.log(this.newQuote)
-    // myForm.reset()
+    let createdQuote= <Quote>{}
+    createdQuote.id=0
+    createdQuote.quote= myForm.value.quote
+    createdQuote.name= myForm.value.name
+    createdQuote.authorName= myForm.value.authorName
+    this.add.emit(createdQuote);
+    myForm.reset()
   }
 
 
