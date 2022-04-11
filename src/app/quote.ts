@@ -9,13 +9,14 @@ export class Quote {
   name: string;
   upvotes: number;
   downvotes: number;
+  date: Date;
 
 
 
 
 
   showNewQuote: boolean;
-  constructor(id: number,  quote: string,  authorName: string, name: string, upvotes: number, downvotes: number){
+  constructor(id: number,  quote: string,  authorName: string, name: string, upvotes: number, downvotes: number, date: Date){
     this.id=id;
     this.quote=quote;
     this.authorName= authorName;
@@ -23,6 +24,7 @@ export class Quote {
     this.upvotes= upvotes;
     this.downvotes= downvotes;
     this.showNewQuote= false;
+    this.date= date
 
 
 

@@ -11,9 +11,9 @@ export class QuoteComponent implements OnInit {
   @Output() isDel = new EventEmitter<boolean>()
 
   public quotes: Quote[]= [
-    new Quote(1, "it is never night in finland", "Martin", "Kago", 1, 0),
-    new Quote(2, "it is never night in finland", "Muchai", "Kago", 3, 0),
-    new Quote(3, "it is never night in finland", "Kago", "Martin", 2, 1),
+    new Quote(1, "it is never night in finland", "Martin", "Kago", 1, 0, new Date(2020,0,1)),
+    new Quote(2, "it is never night in finland", "Muchai", "Kago", 3, 0, new Date(2020,1,1)),
+    new Quote(3, "it is never night in finland", "Kago", "Martin", 2, 1, new Date(2020,2,1)),
 
   ]
 
@@ -23,11 +23,18 @@ export class QuoteComponent implements OnInit {
     quote.id=this.quotes.length+1
     this.quotes.push(quote)
     
+    
 
   }
 
-  arr: number[] = this.quotes.map(quote=>quote.upvotes)
-  highest = Math.max(...this.arr)
+
+  upVot(){
+    var arr = this.quotes.map(quote=>quote.upvotes)
+    var highest = Math.max(...arr)
+    return highest
+  }
+
+
 
   deleteQuote(del: boolean, index: number){
     if(del){
@@ -38,6 +45,12 @@ export class QuoteComponent implements OnInit {
   addUpvote(up: boolean, index: number){
     if(up){
       this.quotes[index].upvotes=this.quotes[index].upvotes+1
+    }
+  }
+
+  downvote(down: boolean, index: number){
+    if(down){
+      this.quotes[index].downvotes=this.quotes[index].downvotes-1
     }
   }
 

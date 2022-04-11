@@ -15,7 +15,7 @@ export class NewQuoteComponent implements OnInit {
   @Output() BtnPress = new EventEmitter();
 
 
-  newQuote = new Quote(0, "", "", "", 0, 0);  
+  newQuote = new Quote(0, "", "", "", 0, 0, new Date());  
   
   
 

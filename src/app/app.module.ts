@@ -9,6 +9,7 @@ import { NewQuoteComponent } from './new-quote/new-quote.component';
 import { FormsModule } from '@angular/forms';
 import { QuoteComponent } from './quote/quote.component';
 import { HighlightDirective } from './highlight.directive';
+import { QuotepipipePipe } from './quotepipipe.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { HighlightDirective } from './highlight.directive';
     MainComponent,
     NewQuoteComponent,
     QuoteComponent,
-    HighlightDirective
+    HighlightDirective,
+    QuotepipipePipe
   ],
   imports: [
     BrowserModule,

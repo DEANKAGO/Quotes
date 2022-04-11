@@ -1,15 +1,81 @@
-<app-new-quote  (add)="addQuote($event)"></app-new-quote>
-
+<app-new-quote (add)="addQuote($event)"></app-new-quote>
 
 <div class="container p-5 bg-info">
-  <ul  *ngFor = 'let quote of quotes; let i=index' class="list-unstyled text-center">
-    <div *ngIf="quote.upvotes == highest && quote.upvotes>0; then highlight else empty"></div>
+  <ul
+    *ngFor="let quote of quotes; let i = index"
+    class="list-unstyled text-center"
+  >
+    <div
+      *ngIf="
+        quote.upvotes == upVot() && quote.upvotes > 0;
+        then highlight;
+        else empty
+      "
+    ></div>
     <ng-template #highlight>
-      <li appHighlight><span>Quote: {{quote.id}}</span> {{quote.quote}} <br> <span>Author: {{quote.authorName}}</span> <span class="m-2">Name: {{quote.name}}</span> <span class="text-primary m-2"><i class="fa fa-thumbs-up" (click)="addUpvote(true, i)" aria-hidden="true"></i>: {{quote.upvotes}} </span> <span class="text-warning m-2"><i class="fa fa-thumbs-down" aria-hidden="true"></i>: {{quote.downvotes}}</span> <button type="button" (click)="deleteQuote(true, i)" class="btn btn-danger ">Delete</button></li>
+      <li appHighlight>
+        <span>Quote: {{ quote.id }}</span> {{ quote.quote }} <br />
+        <span>Author: {{ quote.authorName }}</span>
+        <span class="m-2">Name: {{ quote.name }}</span>
+        <span class="text-primary m-2"
+          ><i
+            class="fa fa-thumbs-up"
+            (click)="addUpvote(true, i)"
+            aria-hidden="true"
+          ></i
+          >: {{ quote.upvotes }}
+        </span>
+        <span class="text-warning m-2"
+          ><i
+            class="fa fa-thumbs-down"
+            (click)="downvote(true, i)"
+            aria-hidden="true"
+          ></i
+          >: {{ quote.downvotes }}</span
+        >
+        <span class="m-2"
+          >Created: {{ quote.date | quotepipipe }} days ago</span
+        >
+        <button
+          type="button"
+          (click)="deleteQuote(true, i)"
+          class="btn btn-danger"
+        >
+          Delete
+        </button>
+      </li>
     </ng-template>
     <ng-template #empty>
-      <li><span>Quote: {{quote.id}}</span> {{quote.quote}} <br> <span>Author: {{quote.authorName}}</span> <span class="m-2">Name: {{quote.name}}</span> <span class="text-primary m-2"><i class="fa fa-thumbs-up" (click)="addUpvote(true, i)" aria-hidden="true"></i>: {{quote.upvotes}}</span> <span class="text-warning m-2"><i class="fa fa-thumbs-down" aria-hidden="true"></i>: {{quote.downvotes}}</span> <button type="button" (click)="deleteQuote(true, i)" class="btn btn-danger">Delete</button></li>
+      <li>
+        <span>Quote: {{ quote.id }}</span> {{ quote.quote }} <br />
+        <span>Author: {{ quote.authorName }}</span>
+        <span class="m-2">Name: {{ quote.name }}</span>
+        <span class="text-primary m-2"
+          ><i
+            class="fa fa-thumbs-up"
+            (click)="addUpvote(true, i)"
+            aria-hidden="true"
+          ></i
+          >: {{ quote.upvotes }}</span
+        >
+        <span class="text-warning m-2"
+          ><i
+            class="fa fa-thumbs-down"
+            (click)="downvote(true, i)"
+            aria-hidden="true"
+          ></i
+          >: {{ quote.downvotes }}</span
+        ><span class="m-2"
+          >Created: {{ quote.date | quotepipipe }} days ago</span
+        >
+        <button
+          type="button"
+          (click)="deleteQuote(true, i)"
+          class="btn btn-danger"
+        >
+          Delete
+        </button>
+      </li>
     </ng-template>
-
   </ul>
 </div>
