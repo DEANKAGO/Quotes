@@ -16,8 +16,10 @@ export class QuoteComponent implements OnInit {
     new Quote(4, "", "", "", 0, 0),
 
 
-
   ]
+
+  arr: number[] = this.quotes.map(quote=>quote.upvotes)
+  highest = Math.max(...this.arr)
 
   constructor() { }
 
