@@ -8,29 +8,31 @@ import { Quote } from '../quote';
 })
 export class NewQuoteComponent implements OnInit {
   [x: string]: any;
-  Btn2 = 'addQuote'
+  @Input() Btn2 = 'addQuote'
 
   @Output() add = new EventEmitter<Quote>();
+  @Output() BtnPress = new EventEmitter();
 
 
   // @Input() btn2="Card";
   // @Output() btnPress = new EventEmitter()
   // @Output() newQuote = new EventEmitter()
-  newQuote = new Quote("", "", "");  
+  newQuote = new Quote(0, "", "", "", 0, 0);  
   
   
 
   inQuote = "";
   inAuthorName = "";
   inName = "";
+  
+
 
   showAddItem = false;
 
 
   addQuote() {
-    console.log(this.add.emit(this['quoted']))
     this.add.emit(this['quoted']);
-    this['quoted'] = new Quote("", "", "")
+    this['quoted'] = new Quote(0,"", "", "", 0, 0)
 
   }
 
@@ -41,13 +43,20 @@ export class NewQuoteComponent implements OnInit {
   //   }
 
   // }
+
+  BtnPressEvent = (str: string) =>{
+    this['BtnPress'].emit(str);
+  }
   
     
   
   SubmitBtn = () => {
-    let quoteForm = document.getElementById("onClick")
+    // let quoteForm = document.getElementById("onClick")
       if (this['myform'].valid) {
-        console.log("Form Submitted!");
+        this.BtnPressEvent = (str: string) =>{
+          this['BtnPress'].emit(str);
+        }
+        // console.log(this['myform'])
         this['myform'].reset();
       }
 
