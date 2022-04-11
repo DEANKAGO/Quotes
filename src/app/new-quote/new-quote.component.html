@@ -1,21 +1,19 @@
 <div class="container-fluid mt-5">
-  <div class="container  bg-light shadow p-3" style="width: 50%;" id="quoteForm" name="quoteForm">
-    <div class="mb-3 " >
-      <label for="formGroupExampleInput" class="form-label" >NAME</label>
-      <input type="text" class="form-control" id="name" name="name" placeholder="Input Your Name" [(ngModel)]="newQuote.name" #name="ngModel">
-    </div>
-    <div class="mb-3 " >
-      <label for="formGroupExampleInput" class="form-label" >AUTHOR NAME</label>
-      <input type="text" class="form-control" id="author-name" name="author-name" placeholder="Input Author Name" [(ngModel)]="newQuote.authorName" #authorName="ngModel">
-    </div>
-    <div class="mb-3">
-      <label for="formGroupExampleInput2" class="form-label">QUOTE</label>
-      <input type="text" class="form-control" id="quote" name="quote" placeholder="Input Quote" [(ngModel)]="newQuote.quote" #quote="ngModel">
-    </div>
-  </div>
-  <div class="d-flex justify-content-center">
-    <div class="text-center p-3"><button type="button" class="btn btn-primary" click="BtnPressEvent('btn2')">{{Btn2}}</button></div>
-    <div class="text-center p-3"><button type="button" class="btn btn-dark" click="ClearBtn()">Clear</button></div>
-
+  <div class="container  bg-light shadow p-3" style="width: 50%;" >
+    <form action="" id="quoteForm" name="quoteForm" #quoteForm="ngForm">
+      <div class="mb-3 " >
+        <label for="formGroupExampleInput" class="form-label" >NAME</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Input Your Name" [(ngModel)]="newQuote.name" #name="ngModel">
+      </div>
+      <div class="mb-3 " >
+        <label for="formGroupExampleInput" class="form-label" >AUTHOR NAME</label>
+        <input type="text" class="form-control" id="author-name" name="author-name" placeholder="Input Author Name" [(ngModel)]="newQuote.authorName" #authorName="ngModel">
+      </div>
+      <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label">QUOTE</label>
+        <input type="text" class="form-control" id="quote" name="quote" placeholder="Input Quote" [(ngModel)]="newQuote.quote" #quote="ngModel">
+      </div>
+      <div class="text-center p-3"><button type="submit" class="btn btn-primary" >add Quote</button></div>
+    </form>
   </div>
 </div>

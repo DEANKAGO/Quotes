@@ -32,7 +32,7 @@ export class NewQuoteComponent implements OnInit {
 
   addQuote() {
     this.add.emit(this['quoted']);
-    this['quoted'] = new Quote(0,"", "", "", 0, 0)
+    // this['quoted'] = new Quote(0,"", "", "", 0, 0)
 
   }
 
