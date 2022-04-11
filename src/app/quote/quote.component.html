@@ -2,13 +2,13 @@
 
 
 <div class="container p-5 bg-info">
-  <ul  *ngFor = 'let quote of quotes'>
+  <ul  *ngFor = 'let quote of quotes' class="list-unstyled text-center">
     <div *ngIf="quote.upvotes == highest && quote.upvotes>0; then highlight else empty"></div>
     <ng-template #highlight>
-      <li appHighlight>{{quote.quote}} <span class="text-primary">Upvotes: {{quote.upvotes}}</span> <span class="text-warning m-2">Downvotes: {{quote.downvotes}}</span></li>
+      <li appHighlight><span>Quote: {{quote.id}}</span> {{quote.quote}} <br> <span>Author: {{quote.authorName}}</span> <span class="m-2">Name: {{quote.name}}</span> <span class="text-primary m-2">Upvotes: {{quote.upvotes}} </span> <span class="text-warning m-2">Downvotes: {{quote.downvotes}}</span> <button type="button" class="btn btn-danger ">Delete</button></li>
     </ng-template>
     <ng-template #empty>
-      <li>{{quote.quote}} <span class="text-primary">Upvotes: {{quote.upvotes}}</span> <span class="text-warning m-2">Downvotes: {{quote.downvotes}}</span></li>
+      <li><span>Quote: {{quote.id}}</span> {{quote.quote}} <br> <span>Author: {{quote.authorName}}</span> <span class="m-2">Name: {{quote.name}}</span> <span class="text-primary m-2">Upvotes: {{quote.upvotes}}</span> <span class="text-warning m-2">Downvotes: {{quote.downvotes}}</span> <button type="button" class="btn btn-danger">Delete</button></li>
     </ng-template>
 
   </ul>

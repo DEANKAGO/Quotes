@@ -34,12 +34,12 @@ export class NewQuoteComponent implements OnInit {
     this.newQuote.name= myForm.value.name
     this.newQuote.authorName= myForm.value.authorName
     this.add.emit(this.newQuote);
-    myForm.resetForm()
-    // this['quoted'] = new Quote(0,"", "", "", 0, 0)
-
+    console.log(this.newQuote)
+    setTimeout(myForm.reset, 0.5)
+    // myForm.reset()
   }
 
-  
+
 
   BtnPressEvent = (str: string) =>{
     this['BtnPress'].emit(str);

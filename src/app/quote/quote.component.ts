@@ -10,9 +10,9 @@ import { Quote } from '../quote';
 export class QuoteComponent implements OnInit {
 
   public quotes: Quote[]= [
-    new Quote(1, "it is never night in finland", "", "", 1, 0),
-    new Quote(1, "it is never night in finland", "", "", 0, 0),
-    new Quote(1, "it is never night in finland", "", "", 0, 0),
+    new Quote(1, "it is never night in finland", "Martin", "Kago", 1, 0),
+    new Quote(2, "it is never night in finland", "Muchai", "Kago", 3, 0),
+    new Quote(3, "it is never night in finland", "Kago", "Martin", 2, 1),
 
   ]
 

@@ -1,17 +1,17 @@
-<div class="container-fluid mt-5">
+<div class="container-fluid m-2">
   <div class="container  bg-light shadow p-3" style="width: 50%;" >
     <form action="" id="quoteForm" name="quoteForm" #quoteForm="ngForm" (ngSubmit)="addQuote(quoteForm)">
       <div class="mb-3 " >
         <label for="formGroupExampleInput" class="form-label" >NAME</label>
-        <input type="text" class="form-control" id="name" name="name" placeholder="Input Your Name" [(ngModel)]="newQuote.name" #name="ngModel">
+        <input required type="text" class="form-control" id="name" name="name" placeholder="Input Your Name" [(ngModel)]="newQuote.name" #name="ngModel">
       </div>
       <div class="mb-3 " >
         <label for="formGroupExampleInput" class="form-label" >AUTHOR NAME</label>
-        <input type="text" class="form-control" id="author-name" name="authorName" placeholder="Input Author Name" [(ngModel)]="newQuote.authorName" #authorName="ngModel">
+        <input required type="text" class="form-control" id="author-name" name="authorName" placeholder="Input Author Name" [(ngModel)]="newQuote.authorName" #authorName="ngModel">
       </div>
       <div class="mb-3">
         <label for="formGroupExampleInput2" class="form-label">QUOTE</label>
-        <input type="text" class="form-control" id="quote" name="quote" placeholder="Input Quote" [(ngModel)]="newQuote.quote" #quote="ngModel">
+        <input required type="text" class="form-control" id="quote" name="quote" placeholder="Input Quote" [(ngModel)]="newQuote.quote" #quote="ngModel">
       </div>
       <div class="text-center p-3"><button type="submit" class="btn btn-primary" >add Quote</button></div>
     </form>
