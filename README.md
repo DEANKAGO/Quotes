@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 # Quotes
 ##### By Martin Kago 
-### Pizza-place: https://deankago.github.io/Quotes/
+### Quotes: https://deankago.github.io/Quotes/
 
 ## Table of Content
 
